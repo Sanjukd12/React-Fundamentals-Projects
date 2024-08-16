@@ -1,11 +1,17 @@
 import { useEffect, useState } from "react";
 import Loading from "./Loading";
+import Tours from "./Tours";
 
 const url = "https://www.course-api.com/react-tours-project";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [tours, setTours] = useState([]);
+
+  const removeTour = (id) => {
+    const newTours = tours.filter((tours) => tours.id !== id);
+    setTours(newTours);
+  };
 
   const fetchTours = async () => {
     setIsLoading(true);
@@ -23,14 +29,18 @@ const App = () => {
     fetchTours();
   }, []);
 
-if(isLoading){
-  return(
+  if (isLoading) {
+    return (
+      <main>
+        <Loading />
+      </main>
+    );
+  }
+
+  return (
     <main>
-<Loading/>
+      <Tours tours={tours} removeTour={removeTour} />
     </main>
   );
-}
-
-  return <h2>Tours Starter</h2>;
 };
 export default App;
