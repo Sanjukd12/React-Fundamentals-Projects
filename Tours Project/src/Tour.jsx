@@ -10,7 +10,17 @@ const Tour = ({ id, image, price, name, info, removeTour }) => {
       <span className="tour-price">${price}</span>
       <div className="tour-info">
         <h5>{name}</h5>
-        <p>{readMore ? info : `${info.substring(0, 200)}...`}</p>
+        <p>
+          {readMore ? info : `${info.substring(0, 200)}...`}
+
+          <button
+            type="button"
+            className="info-btn"
+            onClick={() => setReadMore(!readMore)}
+          >
+            {readMore ? "show less" : "read more"}{" "}
+          </button>
+        </p>
         <button
           type="button"
           className="btn btn-block delete-btn"
