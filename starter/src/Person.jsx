@@ -1,8 +1,12 @@
 import React from 'react'
+import data from './data'
 
-const Person = () => {
+const Person = ({image, name, age}) => {
   return (
-    <div>Person</div>
+    <article className='person'>
+
+      <img src={image} alt={name} className='img'/>
+    </article>
   )
 }
 
