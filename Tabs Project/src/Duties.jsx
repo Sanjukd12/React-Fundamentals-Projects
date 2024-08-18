@@ -1,9 +1,19 @@
-import React from 'react'
+import React from "react";
+import { FaAngleDoubleRight } from "react-icons/fa";
 
-const Duties = ({duties}) => {
+const Duties = ({ duties }) => {
   return (
-    <div>Duties</div>
-  )
-}
+    <div>
+      {duties.map((duty, index) => {
+        return (
+          <div key={index} className="job-desc">
+            <FaAngleDoubleRight className="job-icon" />
+            <p>{duty}</p>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
 
-export default Duties
+export default Duties;
