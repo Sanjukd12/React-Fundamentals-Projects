@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 
-const Form = () => {
+const Form = ({ addColor }) => {
+  // Corrected props destructuring
   const [color, setColor] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Selected color: ${color}`);
+    if (color) {
+      addColor(color); // Call the addColor function with the input color
+    }
   };
 
   return (
