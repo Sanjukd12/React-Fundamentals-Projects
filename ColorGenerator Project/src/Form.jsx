@@ -2,7 +2,12 @@ import React, { useState } from "react";
 
 const Form = () => {
   const [color, setColor] = useState("");
-  const handleSubmit = (e) => {};
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert(`Selected color: ${color}`);
+  };
+
   return (
     <section className="container">
       <h4>Color generator</h4>
