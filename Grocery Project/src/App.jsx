@@ -37,10 +37,21 @@ const App = () => {
     setItems(newItems);
     setLocalStorage(newItems);
   };
+
+  const editItem = (itemId) => {
+    const newItems = items.map((item) => {
+      if (item.id === itemId) {
+        const newItem = { ...item, completed: !item.completed };
+        return newItem;
+      }
+    });
+    setItems(newItems);
+    setLocalStorage(newItems);
+  };
   return (
     <section className="section-center">
       <Form addItem={addItem} />
-      <Items items={items} removeItem={removeItem} />
+      <Items items={items} removeItem={removeItem} editItem={editItem} />
     </section>
   );
 };
