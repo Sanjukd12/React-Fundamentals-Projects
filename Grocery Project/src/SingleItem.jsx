@@ -12,7 +12,7 @@ const SingleItem = ({ item, removeItem }) => {
       <p
         style={{
           textTransform: "capitalize",
-          TextDecoration: isChecked && "line-through",
+          textDecoration: isChecked && "line-through",
         }}
       >
         {item.name}
