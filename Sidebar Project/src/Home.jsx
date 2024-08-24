@@ -12,7 +12,7 @@ const Home = () => {
         <FaBars />
       </button>
       <button onClick={openModel} className="btn">
-        Show Model
+        Show Modal
       </button>
     </main>
   );
